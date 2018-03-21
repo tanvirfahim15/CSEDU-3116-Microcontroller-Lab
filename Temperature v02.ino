@@ -1,7 +1,8 @@
 const int sensor = 0;
 const int button = 2;
 int state = 0;
-int ltime = 1000;
+int bVal =0;
+unsigned long ltime = 1000;
 void setup()
 {
   Serial.begin(9600);
@@ -17,7 +18,7 @@ float getFahrenheit(){
 void loop()
 {
 
-  int bVal = digitalRead(button);
+  bVal = digitalRead(button);
   if (bVal > 0) {
     state=1-state;
     delay(500);
